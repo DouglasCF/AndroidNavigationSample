@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/app_navigation"
+  app:startDestination="@id/homeFragment">
+
+  <fragment
+    android:id="@+id/homeFragment"
+    android:name="br.com.fornaro.sample.navigation.HomeFragment"
+    android:label="@string/home"
+    tools:layout="@layout/fragment_home">
+    <action
+      android:id="@+id/fillFragment"
+      app:destination="@id/fillFragment"
+      app:enterAnim="@anim/slide_in_right"
+      app:exitAnim="@anim/slide_out_left"
+      app:popEnterAnim="@anim/slide_in_left"
+      app:popExitAnim="@anim/slide_out_right" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/secondFragment"
+    android:name="br.com.fornaro.sample.navigation.SecondFragment"
+    android:label="@string/second"
+    tools:layout="@layout/fragment_second">
+    <deepLink
+      android:id="@+id/deepLink"
+      app:uri="navsample.com/second" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/thirdFragment"
+    android:name="br.com.fornaro.sample.navigation.ThirdFragment"
+    android:label="@string/third"
+    tools:layout="@layout/fragment_third">
+    <deepLink
+      android:id="@+id/deepLink"
+      app:uri="navsample.com/third" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/fillFragment"
+    android:name="br.com.fornaro.sample.navigation.FillFragment"
+    android:label="@string/fill"
+    tools:layout="@layout/fragment_fill">
+    <action
+      android:id="@+id/filledFragment"
+      app:destination="@id/filledFragment"
+      app:enterAnim="@anim/slide_in_right"
+      app:exitAnim="@anim/slide_out_left"
+      app:popEnterAnim="@anim/slide_in_left"
+      app:popExitAnim="@anim/slide_out_right" />
+    <deepLink
+      android:id="@+id/deepLink"
+      app:uri="navsample.com/fill" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/filledFragment"
+    android:name="br.com.fornaro.sample.navigation.FilledFragment"
+    android:label="@string/filled"
+    tools:layout="@layout/fragment_filled">
+    <argument
+      android:name="someInteger"
+      android:defaultValue="0"
+      app:argType="integer" />
+    <argument
+      android:name="someText"
+      android:defaultValue="@null"
+      app:argType="string"
+      app:nullable="true" />
+    <argument
+      android:name="someDecimal"
+      android:defaultValue="0.0"
+      app:argType="float" />
+    <argument
+      android:name="someBoolean"
+      android:defaultValue="false"
+      app:argType="boolean" />
+    <argument
+      android:name="someLocation"
+      android:defaultValue="@null"
+      app:argType="android.location.Location"
+      app:nullable="true" />
+    <argument
+      android:name="someObj"
+      android:defaultValue="@null"
+      app:argType=".SomeObj"
+      app:nullable="true" />
+    <argument
+      android:name="someEnum"
+      android:defaultValue="VALUE_1"
+      app:argType=".SomeEnum" />
+  </fragment>
+</navigation>
