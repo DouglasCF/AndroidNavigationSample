@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -39,11 +43,9 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     // Tests
-    testImplementation 'junit:junit:4.12'
-
-    androidTestImplementation "androidx.test:runner:1.2.0"
+    androidTestImplementation 'org.mockito:mockito-android:3.0.0'
     androidTestImplementation "androidx.test:rules:1.2.0"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
-    androidTestImplementation "androidx.arch.core:core-testing:2.0.0"
-    debugImplementation 'androidx.fragment:fragment-testing:1.2.0-alpha01'
+    androidTestImplementation "androidx.arch.core:core-testing:2.0.1"
+    androidTestImplementation "androidx.fragment:fragment-testing:1.2.0-alpha02"
 }
